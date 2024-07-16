@@ -34,7 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/Customers", async (IMemoryCache cache, AppDbContext dbContext) =>
+app.MapGet("/customers", async (IMemoryCache cache, AppDbContext dbContext) =>
 {
     var cacheKey = "customersCache";
     if (!cache.TryGetValue(cacheKey, out List<Customer>? customers))
